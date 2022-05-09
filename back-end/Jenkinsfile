@@ -6,11 +6,12 @@ pipeline {
             steps {
                 cleanWs()
                 echo 'Pull Code'
+                git branch: 'main', url: 'https://github.com/Bot-Bank100/SDTE-Final.git'
             }
         }
         stage('Download Dependencies') {
             steps {
-                dir("C:\\Users\\Bank100\\Desktop\\SDTE Final\\back-end"){
+                dir("back-end"){
                     sh 'npm install'
                 }
             }

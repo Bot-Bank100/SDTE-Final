@@ -3,13 +3,13 @@ const app = express()
 const cors = require('cors')
 app.use(cors())
 const bodyParser = require('body-parser')
-app.use(bodyParser.json());
+app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({
   extended: true
 }))
 
-const { MongoClient } = require('mongodb');
-const database = 'mongodb://localhost:27017';
+const { MongoClient } = require('mongodb')
+const database = 'mongodb://host.docker.internal:8000'
 
 app.get('/', (req, res) => {
     res.json({ message: 'Hello!' })

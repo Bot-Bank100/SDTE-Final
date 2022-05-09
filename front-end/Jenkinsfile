@@ -36,7 +36,8 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                withCredentials([string(credentialsId: 'team2-backend-docker', variable: 'team2sshPass')]) {
+                echo 'Deploy'
+                /*withCredentials([string(credentialsId: 'team2-backend-docker', variable: 'team2sshPass')]) {
                     script {
                         def remote = [:]
                         remote.host = '159.223.45.216'
@@ -49,7 +50,7 @@ pipeline {
                         sshCommand remote: remote, command: "docker-compose -f SDTP/dockerCompose.yml up -d"
                         sshCommand remote: remote, command: "rm -r SDTP"
                     }
-                }
+                }*/
             }
         }
         stage('Notification') {

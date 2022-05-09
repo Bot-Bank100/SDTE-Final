@@ -9,12 +9,13 @@ pipeline {
             steps {
                 cleanWs()
                 echo 'Pull Code'
+                git branch: 'main', url: 'https://github.com/Bot-Bank100/SDTE-Final.git'
             }
         }
         stage('Download Dependencies') {
             steps {
                 dir("front-end"){
-                    sh 'npm install'
+                    bat 'npm install'
                 }
             }
         }

@@ -10,7 +10,9 @@ pipeline {
         }
         stage('Download Dependencies') {
             steps {
-                echo 'Download Dependencies'
+                dir("C:/Users/Bank100/Desktop/SDTE Final/back-end"){
+                    sh 'npm install'
+                }
             }
         }
         stage('Unit Test') {

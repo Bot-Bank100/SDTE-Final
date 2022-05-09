@@ -10,7 +10,7 @@ pipeline {
         }
         stage('Download Dependencies') {
             steps {
-                dir("C:/Users/Bank100/Desktop/SDTE Final/back-end"){
+                dir("C:\\Users\\Bank100\\Desktop\\SDTE Final\\back-end"){
                     sh 'npm install'
                 }
             }

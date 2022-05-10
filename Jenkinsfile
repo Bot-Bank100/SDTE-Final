@@ -28,9 +28,9 @@ pipeline {
         stage('Deploy to target server') {
             steps {
                 echo 'Deploy to target server'
-                bat: "docker pull mongo"
-                bat: "docker run -d -p 8000:27017 mongo"
-                bat: "docker-compose -f docker-compose-deploy.yml up -d"
+                bat 'docker pull mongo'
+                bat 'docker run -d -p 8000:27017 mongo'
+                bat 'docker-compose -f docker-compose-deploy.yml up -d'
             }
         }
         stage('Notification') {

@@ -1,8 +1,5 @@
 pipeline {
     agent any
-    environment{
-        SECRET_FILE = credentials('team2-secret')
-    }
 
     stages {
         stage('Pull Code') {

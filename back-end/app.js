@@ -15,20 +15,15 @@ app.get('/', (req, res) => {
     res.json({ message: 'Hello!' })
   })
 
-  
-app.get('/users/:username', async(req, res) => {
-  const username = req.params.username
+app.get('/getCourses', async(req, res) => {
   const client = new MongoClient(database)
   await client.connect()
-  const user = await client.db('Test').collection('Test').findOne({"username": username})
+  const courses = await client.db('SDTE').collection('Courses').find({}).toArray()
   await client.close()
-  res.status(200).send({
-    "status": "ok",
-    "user": user
-  })
+  res.status(200).send(courses)
 })
 
-app.post('/users/create', async(req, res) => {
+/*app.post('/users/create', async(req, res) => {
   const user = req.body
   console.log(user)
   const client = new MongoClient(database);
@@ -46,7 +41,7 @@ app.post('/users/create', async(req, res) => {
     "message": "User with ID = '+user.id+' is created",
     "user": user
   })
-})
+})*/
 
 app.listen(3000, () => {
     console.log('Application is running on port 3000')

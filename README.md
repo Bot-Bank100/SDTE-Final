@@ -12,9 +12,9 @@
   * docker-compose -f docker-compose-deploy.yml up -d
   
 ## หลังจากทำการ Install และ Deploy เสร็จแล้วสามารถใช้งานได้ที่
-http//localhost:9080/
+  * http//localhost:9080/
 
 ## การสร้างข้อมูลใน MongoDB
-ใน Github จะมีไฟล์ข้อมูล json 2 ไฟล์ ชื่อว่า "bangkokCourses" และ "chumphonCourses"  
-ใน mongoDB ให้สร้าง Database ชื่อว่า "SDTE" และสร้าง 2 Collections คือ "Courses" และ "ChumphonCourses"  
-เพิ่มข้อมูลเข้าไป "bangkokCourses" => "Courses" และ "chumphonCourses" => "ChumphonCourses"  
+  * ใน Github จะมีไฟล์ข้อมูล json 2 ไฟล์ ชื่อว่า "bangkokCourses" และ "chumphonCourses"  
+  * ใน mongoDB ให้สร้าง Database ชื่อว่า "SDTE" และสร้าง 2 Collections คือ "Courses" และ "ChumphonCourses"  
+  * เพิ่มข้อมูลเข้าไป "bangkokCourses" => "Courses" และ "chumphonCourses" => "ChumphonCourses"  

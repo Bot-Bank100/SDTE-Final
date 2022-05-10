@@ -16,11 +16,20 @@ app.get('/', (req, res) => {
   })
 
 app.get('/getCourses', async(req, res) => {
-  const client = new MongoClient(database)
+  let client = new MongoClient(database)
   await client.connect()
-  const courses = await client.db('SDTE').collection('Courses').find({}).toArray()
+  let courses = await client.db('SDTE').collection('Courses').find().toArray()
   await client.close()
   res.status(200).send(courses)
+})
+
+app.get('/getChumphonCourses', async(req, res) => {
+  let client = new MongoClient(database)
+  await client.connect()
+  let chumphonCourses = await client.db('SDTE').collection('ChumphonCourses').find().toArray()
+  console.log(chumphonCourses)
+  await client.close()
+  res.status(200).send(chumphonCourses)
 })
 
 /*app.post('/users/create', async(req, res) => {

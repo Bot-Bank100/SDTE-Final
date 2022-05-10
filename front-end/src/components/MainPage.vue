@@ -111,13 +111,13 @@ export default {
     }
   },
   created() {
-    axios.get('http://localhost:3000/getCourses').then((res) => {
+    axios.get('http://host.docker.internal:3080/getCourses').then((res) => {
       console.log(res.data)
       this.courses = res.data
     }).catch((error) => {
       console.log(error)
     }),
-    axios.get('http://localhost:3000/getChumphonCourses').then((res) => {
+    axios.get('http://host.docker.internal:3080/getChumphonCourses').then((res) => {
       console.log(res.data)
       this.chumphonCourses = res.data
     }).catch((error) => {

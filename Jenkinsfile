@@ -33,9 +33,9 @@ pipeline {
                 bat 'docker-compose -f docker-compose-deploy.yml up -d'
             }
         }
-        stage('Notification') {
+        stage('API/UI testing') {
             steps {
-                echo 'OK'
+                echo 'API/UI Testing'
             }
         }
     }
